@@ -6,11 +6,9 @@ call vundle#rc()
 Bundle 'luochen1990/rainbow'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-sensible'
-Bundle 'tpope/vim-fireplace', { 'for': 'clojure' }
-Bundle 'tpope/vim-sexp-mappings-for-regular-people'
-Bundle 'tpope/vim-dispatch'
-Bundle 'tpope/vim-projectionist'
+Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-leiningen'
+Bundle 'tpope/vim-sexp-mappings-for-regular-people'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
@@ -19,25 +17,26 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-repeat'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'rodjek/vim-puppet'
 Bundle 'groenewege/vim-less'
 Bundle 'kien/ctrlp.vim'
 Bundle 'othree/html5.vim'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
-Bundle 'godlygeek/tabular'
 Bundle 'pangloss/vim-javascript'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'guns/vim-sexp'
 Bundle 'guns/vim-clojure-static'
-Bundle 'bling/vim-airline'
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 Bundle 'rking/ag.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'mxw/vim-jsx'
+Bundle 'ntpeters/vim-better-whitespace'
 
 " Must Haves
 filetype plugin indent on
+
 " Jsx settings
 let g:jsx_ext_required = 0
 
@@ -70,8 +69,8 @@ augroup END
 
 " Make things better
 
-set scrolloff=3
-set wildmode=list:longest
+" set scrolloff=3
+" set wildmode=list:longest
 set visualbell
 set cursorline
 set cursorcolumn
@@ -123,7 +122,7 @@ vnoremap <F1> <ESC>
 " au FocusLost * :wa
 
 " Strip all trailing white space
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+let strip_whitespace_on_save = 1
 
 " HTML fold tag function
 nnoremap <leader>ft Vatzf
@@ -137,9 +136,6 @@ nnoremap <leader>q gqip
 " reselect pasted text
 nnoremap <leader>v V`]
 
-" open vimrc in split window
-nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
-"
 " source vimrc file after changes
 nnoremap <leader>sv :so $MYVIMRC<cr>
 
@@ -168,6 +164,9 @@ colorscheme solarized
 " No backup
 set nobackup
 set nowritebackup
+
+" Always show the status line
+set laststatus=2
 
 let g:rainbow_active = 1
 
@@ -200,5 +199,4 @@ set synmaxcol=800
 
 highlight SpellBad term=underline gui=undercurl guisp=Orange
 set spelllang=en_gb
-
-
+set clipboard=unnamed
