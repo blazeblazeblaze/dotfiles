@@ -1,6 +1,6 @@
 export ZSH=/Users/blazej.hadzik/.oh-my-zsh
 
-ZSH_THEME="sorin"
+ZSH_THEME="gitster"
 export DEFAULT_USER=`whoami`
 
 plugins=(git rails ruby osx sublime z)
