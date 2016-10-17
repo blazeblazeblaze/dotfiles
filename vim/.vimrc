@@ -153,6 +153,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <CR> :noh<CR><CR>
 
 " Resize splits when the window is resized
 au VimResized * :wincmd =
